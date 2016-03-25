@@ -15,6 +15,9 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def edit
+  end
+
 private
 
 #явно разрешаем использование параметров формы (сделано в целях защиты из вне)
