@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
 	end
 
   def index
-    @artikles = Article.all
+    @articles = Article.all
   end
 
 private
