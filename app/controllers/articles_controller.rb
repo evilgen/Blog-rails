@@ -11,6 +11,10 @@ class ArticlesController < ApplicationController
     end
 	end
 
+  def index
+    @artikles = Article.all
+  end
+
 private
 
 #явно разрешаем использование параметров формы (сделано в целях защиты из вне)
