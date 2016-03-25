@@ -1,0 +1,16 @@
+<h2>List of articles</h2>
+<br />
+<% @articles.each do |art| %>
+		<p>
+			<span style="font-size: 150%; color: black ">Title: </span>
+			<%= art.title %>
+			<br />
+			<br />
+			<%= art.text %>
+			<br />
+			<br />
+			Создан: <%= art.created_at %>
+		</p>
+	<hr />
+<% end %>
+
