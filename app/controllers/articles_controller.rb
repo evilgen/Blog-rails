@@ -1,16 +1,16 @@
 class ArticlesController < ApplicationController
-	def new
-	end
+  def new
+  end
 
-	def create
-		@article = Article.new(article_params)
+  def create
+    @article = Article.new(article_params)
     if @article.valid?
       @article.save
       redirect_to @article
     else
       render action: 'new'
     end
-	end
+  end
 
   def index
     @articles = Article.all
