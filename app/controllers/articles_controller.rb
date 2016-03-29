@@ -34,6 +34,12 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to @article, notice: 'Something was successfully destroyed.'
+  end
+
 private
 
 #явно разрешаем использование параметров формы (сделано в целях защиты из вне)
