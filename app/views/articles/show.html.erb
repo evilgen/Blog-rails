@@ -17,5 +17,19 @@
 		<%= f.submit 'Send comment'%>
 	</p>
 	<% end %>
-
+</p>
+<hr />
+<p>
+	<% @article.comments.each do |art| %>
+		<h4>
+			<%= art.autor %>
+		</h4>
+		<p>
+			<%= art.body %>
+		</p>
+		<p>
+			<%= art.created_at %>
+		</p>
+		<hr />
+	<% end %>
 </p>
