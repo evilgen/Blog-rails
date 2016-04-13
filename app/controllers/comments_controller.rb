@@ -3,7 +3,12 @@ class CommentsController < ApplicationController
 
   def create
     @article = Article.find(params[:article_id])
-    @article.comments.create(comment_params)
+    # @article.comments.create(comment_params)
+    com = @article.comments.new do |c|
+      c.autor = current_user.username
+      c.body = comment_params[:body]
+    end
+    com.save
 
     redirect_to article_path(@article)
   end
@@ -11,7 +16,8 @@ class CommentsController < ApplicationController
 private
 
   def comment_params
-      params.require(:comment).permit(:autor, :body)
+    params.require(:comment).permit(:body)
+    # params.require(:comment).permit(:autor, :body)
   end
 
 end

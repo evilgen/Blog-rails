@@ -5,20 +5,20 @@
 <h2> Add comments </h2>
 <p>
 	<%= form_for([@article, @article.comments.build]) do |f| %>
-<p>
-		<%= f.label :autor %><br />
-		<%= f.text_field :autor %>
-	</p>
-
-	<p>
-		<%= f.label :body %><br />
-		<%= f.text_area :body %>
-	</p>
-	<p>
-		<%= f.submit 'Send comment'%>
+<!-- 		<p>
+			<%= f.label :autor %><br />
+			<%= f.text_field :autor %>
+		</p>
+ -->
+		<p>
+			<%= f.label :body %><br />
+			<%= f.text_area :body %>
+		</p>
+		<p>
+			<%= f.submit 'Send comment'%>
 	</p>
 	<% end %>
-</p>
+	</p>
 <h2> Comments </h2>
 <hr />
 <p>
