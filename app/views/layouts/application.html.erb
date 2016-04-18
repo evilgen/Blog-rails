@@ -29,18 +29,21 @@
 			      <li><a href="/contacts">Contacts</a></li>
 			    </ul>
 			    <ul class="nav navbar-nav navbar-right">
-				    <li><a href="/">Link</a></li>
+				   	<% if user_signed_in? %>
+							<li>
+								<a href="/users/edit">Hello, <%= current_user.username %></a>
+							</li>
+							<li class="divider"></li>
+							<li><%= link_to 'Sign out' , destroy_user_session_path, method: :delete %></li>
+						<% else %>
+							<li><%= link_to 'Sign in' , new_user_session_path %></li>
+						<% end %>
 			    </ul>
 			  </div><!--/.nav-collapse -->
 			</nav>
 
 			<div>
-				<% if user_signed_in? %>
-					Hello, <%= current_user.username %> | <%= link_to 'Sign out' , destroy_user_session_path, method: :delete %>
-				<% else %>
-					<%= link_to 'Sign in' , new_user_session_path %>
-				<% end %>
-
+				
 				<p class="notice"><%= notice %></p>
 				<p class="alert"><%= alert %></p>
 
