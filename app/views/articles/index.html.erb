@@ -8,7 +8,7 @@
 			<%= art.text %>
 		<br />
 		<br />
-		Создан: <%= art.created_at %>
+		Автор: <%= art.username %> Создан: <%= art.created_at %>
 		<%= link_to 'Show', article_path(art) %> |
 		<%= link_to 'Edit', edit_article_path(art) %> |
 		<%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %>

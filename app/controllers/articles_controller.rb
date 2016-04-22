@@ -6,7 +6,10 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    strong_params = article_params
+    strong_params["username"] = current_user.username
+    # @article = Article.new(article_params, username: "Женя")
+    @article = Article.new(strong_params)
     if @article.valid?
       @article.save
       redirect_to @article
@@ -47,7 +50,7 @@ private
 
 #явно разрешаем использование параметров формы (сделано в целях защиты из вне)
 def article_params
-      params.require(:article).permit(:title, :text)
+  params.require(:article).permit(:title, :text, :username)
 end
 
 end
