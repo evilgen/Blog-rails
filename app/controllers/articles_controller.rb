@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
   def create
     strong_params = article_params
     strong_params["username"] = current_user.username
-    # @article = Article.new(article_params, username: "Женя")
     @article = Article.new(strong_params)
     if @article.valid?
       @article.save
